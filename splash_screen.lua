@@ -32,6 +32,11 @@ local pianoSoundsChannel
 -- LOCAL FUNCTIONS
 --------------------------------------------------------------------------------------------
 
+local function gotoMainMenu()
+    composer.gotoScene("main_menu")
+end
+
+------
 -- The function that moves the star across the screen
 local function moveStars()
     stars.x = stars.x + scrollXSpeed
@@ -134,6 +139,9 @@ function scene:hide( event )
         
         -- stop the jungle sounds channel for this screen
         audio.stop(pianoSoundsChannel)
+
+         -- Go to the main menu screen after the given time.
+        timer.performWithDelay ( 3000, gotoMainMenu)  
     end
 
 end --function scene:hide( event )
