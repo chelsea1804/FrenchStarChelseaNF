@@ -43,9 +43,9 @@ local instructionsButton
 -----------------------------------------------------------------------------------------
 
 
--- Creating Transition Function to Credits Page
+-- Creating Transition to Credits Screen
 local function CreditsTransition( )
-	composer.gotoScene( "credits_screen", {effect = "flipFadeOutIn", time = 500})
+    composer.gotoScene( "credit_screen", {effect = "zoomInOutFade", time = 1000})
 end
 
 -----------------------------------------------------------------------------------------
