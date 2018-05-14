@@ -1,8 +1,8 @@
--- splash_screen.lua
--- Created by: Your Name
--- Date: Month Day, Year
--- Description: This is the splash screen of the game. It displays the 
--- company logo that...
+------------------------------------------------------------------------------------------
+-- Title: French Star
+-- Name: Chelsea NF
+-- Course: ICS2O/3C
+-- This program displays the company logo that 
 -----------------------------------------------------------------------------------------
 
 -- Use Composer Library

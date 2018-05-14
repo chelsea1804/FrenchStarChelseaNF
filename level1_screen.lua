@@ -2,7 +2,8 @@
 -- Title: French Star
 -- Name: Chelsea NF
 -- Course: ICS2O/3C
--- This program ... 
+-- This program is the level 1 screen, it transitions from the level 1 
+-- screen to main menu. It displays the back button.
 
 -----------------------------------------------------------------------------------------
 -- Use Composer Library

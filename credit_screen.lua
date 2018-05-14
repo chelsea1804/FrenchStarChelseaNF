@@ -2,7 +2,7 @@
 -- Title: French Star
 -- Name: Chelsea NF
 -- Course: ICS2O/3C
--- This program is the credits page, idsplays the back button to the main menu.
+-- This program is the credits page, displays the back button to the main menu.
 
 ----------------------------------------------------------------------------------------
 -- use composer libraries
