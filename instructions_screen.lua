@@ -15,7 +15,7 @@ local widget = require( "widget" )
 sceneName = "instructions_screen"
 
 -- Creating Scene Object
-scene = composer.newScene( sceneName ) -- This function doesn't accept a string, only a variable containing a string
+local scene = composer.newScene( sceneName ) -- This function doesn't accept a string, only a variable containing a string
 
 -----------------------------------------------------------------------------------------
 -- LOCAL VARIABLES
@@ -24,6 +24,13 @@ local bkg_image
 local backButton
 
 
+
+-- Creating Transition to Instructions Screen
+local function BackTransition( )
+    composer.gotoScene( "main_menu", {effect = "zoomInOutFade", time = 1000})
+end
+
+-----------------------------------------------------------------------------------------
 
 
 -- The function called when the screen dosen't exist
@@ -37,11 +44,11 @@ function scene:create( event )
     -----------------------------------------------------------------------------------------
 
     -- Insert the background image and set it to the center of the screen
-    bkg = display.newImage("Images/intro_bkg.png")
-    bkg.x = display.contentCenterX
-    bkg.y = display.contentCenterY
-    bkg.width = display.contentWidth
-    bkg.height = display.contentHeight
+    bkg_image = display.newImage("Images/instructions.png")
+    bkg_image.x = display.contentCenterX
+    bkg_image.y = display.contentCenterY
+    bkg_image.width = display.contentWidth
+    bkg_image.height = display.contentHeight
 
 
     -- Associating display objects with this scene 
@@ -50,26 +57,21 @@ function scene:create( event )
     -----------------------------------------------------------------------------------------
     -- BUTTON WIDGETS
     -----------------------------------------------------------------------------------------   
+   backButton = widget.newButton(
+     { defaultFile = "Images/BackButtonUnpressed.png",
+       overFile = "Images/BackButtonPressed.png",
+        -- When the button is released, call the Intructions transition function
+        onRelease = BackTransition
 
-    -- Creating Play Button
-    backButton = widget.newButton( 
-        {   
-            -- Set its position on the screen relative to the screen size
-            x = display.contentWidth/7,
-            y = display.contentHeight*5/8,
-
-            -- Insert the images here
-            defaultFile = "Images/BackButtonUnpressed.png",
-            overFile = "Images/BackButtonPressed.png",
-
-            -- When the button is released, call the Level1 screen transition function
-            onRelease = MainMenuTransition          
-        } )
+      })
+   
 
     -----------------------------------------------------------------------------------------
 
     -- Associating button widgets with this scene
     sceneGroup:insert( backButton )
+    
+
 end -- function scene:create( event )   
 
 

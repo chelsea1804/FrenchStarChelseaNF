@@ -45,20 +45,20 @@ local instructionsButton
 
 -- Creating Transition to Credits Screen
 local function CreditsTransition( )
-    composer.gotoScene( "credit_screen", {effect = "zoomInOutFade", time = 1000})
+    composer.gotoScene( "credit_screen", {effect = "crossFade", time = 1000})
 end
 
 -----------------------------------------------------------------------------------------
 
 -- Creating Transition to Level1 Screen
 local function Level1ScreenTransition( )
-	composer.gotoScene( "level1_screen", {effect = "zoomInOutFade", time = 1000})
+	composer.gotoScene( "level1_screen", {effect = "zoomOutInFade", time = 1000})
 end
 
 -------------------
 -- Creating Transition to Instructions Screen
 local function InstructionsTransition( )
-    composer.gotoScene( "instructions_screen", {effect = "zoomInOutFade", time = 1000})
+    composer.gotoScene( "instructions_screen", {effect = "flipFadeOutIn", time = 1000})
 end
 
 ---------------
@@ -141,7 +141,7 @@ function scene:create( event )
             overFile = "Images/InstructionsButtonPressed.png",
 
             -- When the button is released, call the Intructions transition function
-            onRelease = IntructionsTransition
+            onRelease = InstructionsTransition
         } ) 
 
 
